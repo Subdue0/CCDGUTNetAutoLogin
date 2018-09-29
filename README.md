@@ -6,10 +6,10 @@ Python3 完成校园网认证
     止于校园网再度升级
 适用学校：<br>
 ---------------------
-    仅适用东莞理工学院城市学院
+    仅适用于东莞理工学院城市学院
 适用环境：<br>
 ---------------------
-    Win10，Win7测试均通过，Mac未测试
+    Win10，Win7测试均通过，Mac不行
 使用方法 ：<br>
 --------------------
     首先下载压缩包：https://github.com/Subdue0/CCDGUTNetAutoLoginW/releases/download/v1.0/CCDGUTAutoLogin.rar
