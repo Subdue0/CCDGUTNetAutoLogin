@@ -59,4 +59,6 @@ choice /m 程序没有加入开机自启，返回主界面请按：Y，退出请
 if errorlevel 2 goto exit
 if errorlevel 1 goto menu
 )
+
+
 :exit
