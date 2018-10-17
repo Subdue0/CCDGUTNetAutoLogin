@@ -12,9 +12,9 @@ Python3 完成校园网认证
     Win10，Win7测试均通过，Mac未测试
 使用方法 ：<br>
 --------------------
-    首先下载压缩包：https://github.com/Subdue0/CCDGUTNetAutoLoginW/releases/download/v1.0/CCDGUTAutoLogin.rar
+    首先下载压缩包：https://github.com/Subdue0/CCDGUTNetAutoLoginW/releases/download/v1.1/CCDGUTAutoLogin.rar
     
-    然后，解压exe，bat，txt三个类型的文件到你的桌面上；
+    然后，压缩包，解压到D盘根目录下；
     
     再者，编辑info.txt里面的数据，改成相应的账号密码以及更改默认的延迟启动时间（可选择默认）；
     
