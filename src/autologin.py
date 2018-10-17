@@ -6,7 +6,6 @@
 import requests
 import shutil
 import os
-import getpass
 import time
 # 数据读取模块
 import linecache
@@ -168,11 +167,10 @@ class Login():
 			# 设置必须在3s内收到响应，不然抛出ReadTimeout异常
 			except ReadTimeout:
 				print('**Read Timeout**')
-				print('**Please check the "router wiring"!**')
 				print('\n')
 				time.sleep(5)
 			except:
-				print('**An unknow error happened!**')
+				print('**An Unknow Error Happened**')
 				print('\n')
 				time.sleep(5)
 			
@@ -274,11 +272,10 @@ class Login():
 			# 设置必须在3s内收到响应，不然抛出ReadTimeout异常
 			except ReadTimeout:
 				print('**Read Timeout**')
-				print('**Please check the "router wiring"!**')
 				print('\n')
 				time.sleep(5)
 			except:
-				print('**An unknow error happened!**')
+				print('**An Unknow Error Happened**')
 				print('\n')
 				time.sleep(5)
 			
@@ -327,10 +324,10 @@ def main(intranet_username, intranet_password, extranet_username, extranet_passw
 			else:
 				print("**Unknown error occurred when visiting Tencent's homepage!**")
 				os.system('pause')
-		# 网络不通，无法送出请求，直接返回503
+		# 服务器出错响应，返回503
 		elif l.connectivity_test() == 503:
 			print('**Connection Error**')
-			print('**Please check the "network connection"!**')
+			print('**Server error response, return 503"!**')
 			print('\n')
 			time.sleep(5)
 			main(intranet_username, intranet_password, extranet_username, extranet_password, PATH)
@@ -348,7 +345,7 @@ def main(intranet_username, intranet_password, extranet_username, extranet_passw
 			os.system('pause')
 		else:
 			print('**Extranet login failed!**')
-			print('**Your phone number or password, please check!**')
+			print('**Your phone number or password error, please check!**')
 			os.system('pause')
 			
 
@@ -361,20 +358,19 @@ def get_content(PATH):
 		delay = int("".join(linecache.getline(PATH+'info.txt', 27).split()))
 		linecache.clearcache()
 		if len(username1) != 12 or len(username2) != 11:
-			print('**In line 12 or line 16 of the file "info.txt" on your desktop!**')
+			print('**In line 12 or line 16 of the file "info.txt" in the "D:/"!**')
 			print("**The data's length is not right,please check!**")
 			os.system('pause')
 			exit(-1)
 		return (username1, password1, username2, password2, delay)
 	else:
-		print('**Can\'t find the file "info.txt" on your desktop!**')
+		print('**Can\'t find the file "info.txt" in the "D:/"!**')
 		os.system('pause')
 		exit(-1)
 
 		
 if __name__=='__main__':
-	computer_username = getpass.getuser()
-	PATH = 'C:/Users/'+computer_username+'/Desktop/'
+	PATH = 'D:/'
 	username1, password1, username2, password2, delay = get_content(PATH)
 	if delay == 0:
 		main(username1, password1, username2, password2, PATH)
