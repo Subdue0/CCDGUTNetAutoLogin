@@ -14,6 +14,8 @@ Python3 完成校园网认证
 --------------------
     首先下载压缩包：https://github.com/Subdue0/CCDGUTNetAutoLoginW/releases/download/v1.2/CCDGUTAutoLogin.rar
     
+    再者，把全部文件解压到D盘根目录（D:\）下；
+    
     接着，编辑info.txt里面的数据，改成相应的账号密码以及更改默认的延迟启动时间（可选择默认）；
     
     然后，运行bat文件，将程序加入开机自启动，再将电脑WiFi中的自动连接打上勾，有线网络不用就禁用掉，如果用有线网络连接，就把WiFi自动连接关掉，避免两种上网方式同时存在；
