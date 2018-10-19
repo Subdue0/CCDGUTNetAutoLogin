@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 #coding:utf-8
 
 
@@ -358,19 +357,19 @@ def get_content(PATH):
 		delay = int("".join(linecache.getline(PATH+'info.txt', 27).split()))
 		linecache.clearcache()
 		if len(username1) != 12 or len(username2) != 11:
-			print('**In line 12 or line 16 of the file "info.txt" in the "D:/"!**')
+			print('**In line 12 or line 16 of the file "info.txt"!**')
 			print("**The data's length is not right,please check!**")
 			os.system('pause')
 			exit(-1)
 		return (username1, password1, username2, password2, delay)
 	else:
-		print('**Can\'t find the file "info.txt" in the "D:/"!**')
+		print('**Can\'t find the file "info.txt" under the current path!**')
 		os.system('pause')
 		exit(-1)
 
 		
 if __name__=='__main__':
-	PATH = 'D:/'
+	PATH = './'
 	username1, password1, username2, password2, delay = get_content(PATH)
 	if delay == 0:
 		main(username1, password1, username2, password2, PATH)
