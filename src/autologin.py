@@ -291,7 +291,6 @@ def main(intranet_username, intranet_password, extranet_username, extranet_passw
 		# 网络正常
 		if	l.connectivity_test() == 200:
 			print('Network is connected!')
-			os.system('pause')
 		# 网络不通，正常情况
 		elif l.connectivity_test() == 302:
 			l.intranet_login()
@@ -301,7 +300,6 @@ def main(intranet_username, intranet_password, extranet_username, extranet_passw
 			if l.connectivity_test() == 200:
 				print('Intranet login success!')
 				print('Network is connected!')
-				os.system('pause')
 			# 访问腾讯首页重定向
 			elif l.connectivity_test() == 302:
 				# 通过腾讯首页返回的Location值判断内网是否登录成功
@@ -310,7 +308,6 @@ def main(intranet_username, intranet_password, extranet_username, extranet_passw
 					if l.extranet_login_check() == 1:
 						print('Extranet login success!')
 						print('Network is connected!')
-						os.system('pause')
 					else:
 						print('**Extranet login failed!**')
 						print('**Your phone number or password error, please check!**')
@@ -341,7 +338,6 @@ def main(intranet_username, intranet_password, extranet_username, extranet_passw
 			print('Intranet login success!')
 			print('Extranet login success!')
 			print('Network is connected!')
-			os.system('pause')
 		else:
 			print('**Extranet login failed!**')
 			print('**Your phone number or password error, please check!**')
@@ -357,19 +353,19 @@ def get_content(PATH):
 		delay = int("".join(linecache.getline(PATH+'info.txt', 27).split()))
 		linecache.clearcache()
 		if len(username1) != 12 or len(username2) != 11:
-			print('**In line 12 or line 16 of the file "info.txt"!**')
+			print('**In line 12 or line 16 of the file "info.txt" in the "'+PATH+'"!**')
 			print("**The data's length is not right,please check!**")
 			os.system('pause')
 			exit(-1)
 		return (username1, password1, username2, password2, delay)
 	else:
-		print('**Can\'t find the file "info.txt" under the current path!**')
+		print('**Can\'t find the file "info.txt" in the "'+PATH+'"!**')
 		os.system('pause')
 		exit(-1)
 
 		
 if __name__=='__main__':
-	PATH = './'
+	PATH = 'D:\\'
 	username1, password1, username2, password2, delay = get_content(PATH)
 	if delay == 0:
 		main(username1, password1, username2, password2, PATH)
