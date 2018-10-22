@@ -35,8 +35,9 @@ if exist "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Progr
 	)
 ) else (
 	echo 程序没办法为你的计算机直接加入开机自启动，请手动按快捷键WIN+R运行Shell:Startup，然后复制autologin.exe进文件夹内即可
-	)
-
+	pause
+	goto exit
+)
 
 
 :copy
@@ -65,4 +66,6 @@ if exist "C:\Users\%username%\AppData\Roaming\Microsoft\Windows\Start Menu\Progr
 	if errorlevel 2 goto exit
 	if errorlevel 1 goto menu
 )
+
+
 :exit
