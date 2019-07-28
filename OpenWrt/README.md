@@ -13,7 +13,9 @@ Python3 完成校园网认证
     python2.7（OpenWrt、LEDE）。
 交叉编译需知：<br>
 --------------------
-    以lean大的LEDE固件（https://github.com/coolsnowwolf/lede）为例，由于程序并没有加入luci控制界面，所以需要手动设置开机自启动和计划任务，为了方便以后再编译使用，我修改了lean的默认配置default-settings（）。
+    以lean大的LEDE固件（https://github.com/coolsnowwolf/lede）为例，由于程序并没有加入luci控制界面，所以需要手动设置开机自启动和计划任务，为了方便以后再编译使用，我修改了lean的默认配置。
+修改后default-settings链接：<br>
+--------------------
 修改default-settings或者自行加入以下代码：<br>
 --------------------
     # 自启动代码
