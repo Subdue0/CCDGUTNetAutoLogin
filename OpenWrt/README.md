@@ -17,7 +17,7 @@ Python3 完成校园网认证
 修改后default-settings链接：<br>
 --------------------
     https://github.com/Subdue0/CCDGUTNetAutoLogin/releases/download/default-settings%EF%BC%88OpenWrt%EF%BC%89/default-settings.rar
-修改default-settings或者自行加入以下代码：<br>
+default-settings加入以下代码：<br>
 --------------------
     # 自启动代码
     sed -i '/exit 0/i/usr/sbin/autologin 学号 密码 天翼账号 密码' /etc/rc.local
