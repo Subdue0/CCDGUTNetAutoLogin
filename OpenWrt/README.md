@@ -16,6 +16,7 @@ Python3 完成校园网认证
     以lean大的LEDE固件（https://github.com/coolsnowwolf/lede）为例，由于程序并没有加入luci控制界面，所以需要手动设置开机自启动和计划任务，为了方便以后再编译使用，我修改了lean的默认配置。
 修改后default-settings链接：<br>
 --------------------
+    https://github.com/Subdue0/CCDGUTNetAutoLogin/releases/download/default-settings%EF%BC%88OpenWrt%EF%BC%89/default-settings.rar
 修改default-settings或者自行加入以下代码：<br>
 --------------------
     # 自启动代码
