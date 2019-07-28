@@ -1,0 +1,3 @@
+title=CCDGUT
+author=Subdue
+orientation=portrait

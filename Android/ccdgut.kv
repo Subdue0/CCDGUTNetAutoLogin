@@ -1,0 +1,197 @@
+#:kivy 1.9.1
+#:import C kivy.utils.get_color_from_hex
+
+
+
+# 根控件
+<RootWidget>:
+	# 各控件的绑定声明
+	schoolnumber: schoolnumber
+	password1: password1
+	phonenumber: phonenumber
+	password2: password2
+	login: login
+	mylabel: mylabel
+	
+	
+	
+	# 全局布局
+	BoxLayout:
+		orientation: 'vertical'
+		pos: root.pos
+		size: root.size
+		# 全局背景
+		canvas:
+			BorderImage:
+				pos: root.pos
+				size: root.size
+				source: 'images/background.png'
+		# 间隔	
+		Spacing:
+			size_hint_y: .34
+		# 账号密码输入框
+		BoxLayout:
+			size_hint_y: .25
+			orientation: 'vertical'
+			spacing: 5
+			BoxTextInput:
+				id: schoolnumber
+				thumbnail: 'images/schoolnumber.png'
+				hint_text: '学号'
+				text: app.schoolnumber
+			BoxTextInput:
+				id: password1
+				thumbnail: 'images/password.png'
+				hint_text: '密码'
+				text: app.password1
+			BoxTextInput:
+				id: phonenumber
+				thumbnail: 'images/phonenumber.png'
+				hint_text: '手机号'
+				text: app.phonenumber
+			BoxTextInput:
+				id: password2
+				thumbnail: 'images/password.png'
+				hint_text: '密码'
+				text: app.password2
+		# 间隔	
+		Spacing:
+			size_hint_y: .1
+		# 登录按钮
+		BoxLayout:
+			size_hint_y: .08
+			Spacing:
+				size_hint_x: .35
+			Button:
+				id: login
+				size_hint_x: .3
+				background_normal: 'images/button_normal.png'
+				background_down: 'images/button_down.png'
+				on_press: app.login()
+				on_release: app.login()
+			Spacing:
+				size_hint_x: .35
+		# 间隔
+		Spacing:
+			size_hint_y: .1		
+		# 下方的盒式标签
+		BoxLayout:
+			size_hint_y: .03
+			BoxLabel:
+				id: mylabel
+				light: app.light
+				network_status: app.network_status
+				change_password_status: app.change_password_status
+				strikethrough: app.strikethrough
+		# 间隔				
+		Spacing:
+			size_hint_y: .1
+	
+
+
+# 盒式输入框
+<BoxTextInput@BoxLayout>:
+	# 对缩略图进行绑定，可在外部"修改"控件当前状态
+	thumbnail: ''
+	# 对提示文字进行绑定，可在外部"修改"控件当前状态
+	hint_text: ''
+	# 对输入框进行绑定，可在外部"获取和修改"控件当前状态
+	text: input.text
+	Spacing:
+		size_hint_x: .1
+	BoxLayout:
+		size_hint_x: .8
+		canvas.before:
+			Color:
+				rgba: C('#959595')[0], C('#959595')[1], C('#959595')[2], .3
+			RoundedRectangle:
+				pos: self.pos
+				size: self.size
+				radius: self.height/2,
+		Label:
+			size_hint_x: .2
+			canvas:
+				BorderImage:
+					pos: self.pos
+					size: self.size
+					source: root.thumbnail
+		TextInput:
+			id: input
+			size_hint_x: .8
+			padding: 0, 22, 0, 0
+			hint_text: root.hint_text
+			text: root.text
+			font_size: '18sp'
+			multiline: False
+			background_normal: 'images/underline_normal.png'
+			background_active: 'images/underline_active.png'
+	Spacing:
+		size_hint_x: .1
+
+
+
+# 下方盒式标签
+<BoxLabel@BoxLayout>:
+	light: ''
+	network_status: ''
+	strikethrough: bool
+	Label:
+		size_hint_x: .1
+	BoxLayout:
+		size_hint_x: .8		
+		VerticalLine:
+			size_hint_x: .01		
+		BoxLayout:
+			size_hint_x: .485
+			Spacing:
+				size_hint_x: .2
+			Label:
+				size_hint_x: .15
+				canvas:
+					BorderImage:
+						pos: self.pos
+						size: self.size
+						source: root.light
+			Label:
+				size_hint_x: .45
+				text: root.network_status
+				color: C('#96949d')	
+			Spacing:
+				size_hint_x: .2
+		VerticalLine:
+			size_hint_x: .01
+		BoxLayout:
+			size_hint_x: .485
+			Spacing:
+				size_hint_x: .25
+			Label:
+				size_hint_x: .5
+				text: '[ref=change_password]更改密码[/ref]'
+				markup: True
+				disabled: root.strikethrough
+				strikethrough: root.strikethrough
+				color: C('#96949d')
+				on_ref_press: app.change_password()
+			Spacing:
+				size_hint_x: .25
+		VerticalLine:
+			size_hint_x: .01
+	Spacing:
+		size_hint_x: .1
+		
+		
+		
+# 下方盒式标签内的竖线
+<VerticalLine@BoxLayout>:
+	canvas:
+		Color:
+			rgba: C('#96949d')
+		RoundedRectangle:
+			pos: self.pos
+			size: self.size
+			radius: self.width/2,
+		
+		
+
+# 间隔
+<Spacing@Label>:
