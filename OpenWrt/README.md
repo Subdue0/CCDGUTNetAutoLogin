@@ -11,6 +11,12 @@ Python3 完成校园网认证
 适用环境：<br>
 ---------------------
     python2.7（OpenWrt、LEDE）。
-编译进固件需知：<br>
+交叉编译需知：<br>
 --------------------
-    以lean大的LEDE固件为例，
+    以lean大的LEDE固件（https://github.com/coolsnowwolf/lede）为例，由于程序并没有加入luci控制界面，所以需要手动设置开机自启动和计划任务，为了方便以后再编译使用，我修改了lean的默认配置default-settings（），加入了以下代码：
+    # 自启动代码
+    sed -i '/exit 0/i/usr/sbin/autologin 学号 密码 天翼账号 密码' /etc/rc.local
+
+    # 计划任务代码
+    mkdir -p /etc/crontabs
+    echo -e '30 6 * * * reboot\n*/5 * * * * /usr/sbin/autologin 学号 密码 天翼账号 天翼密码' >> /etc/crontabs/root
