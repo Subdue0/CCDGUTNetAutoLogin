@@ -11,6 +11,6 @@ Python3 完成校园网认证
 适用环境：<br>
 ---------------------
     python2.7（OpenWrt、LEDE）。
-程序链接 ：<br>
+编译进固件需知：<br>
 --------------------
-    https://github.com/Subdue0/CCDGUTNetAutoLogin/releases/download/2.0/CCDGUT.rar
+    以lean大的LEDE固件为例，
