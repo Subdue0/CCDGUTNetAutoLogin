@@ -10,4 +10,4 @@ Python3 完成校园网认证
     Win7，Win10
 程序链接 ：<br>
 --------------------
-    https://github.com/Subdue0/CCDGUTNetAutoLogin/releases/download/2.0/CCDGUT.rar
+    https://github.com/Subdue0/CCDGUTNetAutoLogin/blob/master/Windows/2.0/bin/rar/CCDGUT.rar
