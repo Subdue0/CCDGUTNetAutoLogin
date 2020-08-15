@@ -1,13 +1,12 @@
 # 城院校园网web认证自动登录
 
-## 版本说明：
-1. 三个版本都可以用于自动登录城院校园网。虽然他们都是用python实现，但是python中有python2也有python3，他们的一些差异导致每个版本适用性不一样。
-2. 在openwrt（lede）中，推荐使用urllib和urllib2实现那个版本。因为openwrt中，python2支持的第三方库比较多。
-3. 如果是在PC下面跑，需要稍微改动下源码。推荐用urllib那个版本，当然你的环境得是python3，python2的话看着来挑；选择requests也行，不过requests属于第三方库，需要安装。
-4. 三个版本的使用方法虽然不同，但是实现原理都一样，区别在于实现库不同。
+## 测试环境：
+    coolsnowwolf的LEDE固件
 
-## 适用环境：
-    python2.7（coolsnowwolf的LEDE）。
+## 各版本说明：
+1. urllib和urllib2实现----->python2
+2. urllib实现----->python3
+3. requests实现----->python2/python3，需额外安装requests库
 
 ## 使用方法：
 编译coolsnowwolf的LEDE固件时修改[default-settings](https://github.com/Subdue0/CCDGUTNetAutoLogin/releases/download/default-settings%EF%BC%88OpenWrt%EF%BC%89/default-settings.rar)文件
