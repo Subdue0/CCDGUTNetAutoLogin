@@ -13,7 +13,7 @@
 ## 部署虚拟机环境
 - ### 更新ubuntu系统软件
     `sudo apt-get update && sudo apt-get -y upgrade && sudo apt autoremove`
-- ### OpenWrt依赖包
+- ### 安装OpenWrt依赖
     `sudo apt-get install -y gcc g++ binutils patch bzip2 flex bison make autoconf gettext texinfo unzip sharutils subversion libncurses5-dev ncurses-term zlib1g-dev subversion git-core gawk asciidoc libz-dev zlib1g-dev libssl-dev openssl`
 ---
 ## 相关编译命令——需要把当前目录切换到源码包下操作
