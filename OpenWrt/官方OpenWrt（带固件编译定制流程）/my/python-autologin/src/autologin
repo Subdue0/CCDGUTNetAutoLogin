@@ -3,17 +3,14 @@
 
 
 
-
 import os
 import sys
-# 外网登录密码加密模块
 import base64
-		'''HTTP模块'''
+# HTTP模块
 import urllib
 import urllib2
 # 第三方库，需用pip安装，pip install pillow
 from PIL import Image
-
 
 
 
