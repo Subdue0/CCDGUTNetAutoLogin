@@ -1,5 +1,0 @@
-00 6 * * * reboot
-
-
-
-*/2 * * * * /usr/sbin/autologin 学号 密码 天翼账号 天翼密码
